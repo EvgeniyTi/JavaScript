@@ -1,0 +1,156 @@
+Задание 1
+var a = 1, b = 1, c, d;
+c = ++a; alert(c); // 2 --> с началоидет прибавление +1. a+1 и присвоение к C= 1+1=2
+d = b++; alert(d); // 1 --> здесь d в начале присваивается значение b Т.е. d = b = 1
+c = (2+ ++a); alert(c); // 5 --> a было 2, и при выполнение ++a, получаем 3. ( 2 + 3 )= 5
+d = (2+ b++); alert(d); // 4 --> b было 2, и в данной формуле b отдает 2 ==> 2+2=4
+alert(a); // 3 --> из предыдущих формул а = 3
+alert(b); // 3 --> из предыдущих формул b = 3
+
+Задание 2
+var a = 2;
+var x = 1 + (a *= 2);
+
+x = 5
+
+Задание 3
+Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который
+работает по следующему принципу:
+если a и b положительные, вывести их разность;
+если а и b отрицательные, вывести их произведение;
+если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+
+var a = +promt("Введите первое число");
+var b = +promt("Введите второе число");
+
+if (a >= 0 && b >= 0) {
+alert(a - b);
+} else if (a < 0 && b < 0) { alert(a * b); } else { alert(a + b); } Задание 4 Присвоить переменной а значение в
+    промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15 <script>
+    var a = parseInt(Math.random() * 14 + 1);
+
+    switch (a) {
+    case 1:
+    console.log("1");
+    case 2:
+    console.log("2");
+    case 3:
+    console.log("3")
+    case 4:
+    console.log("4");
+    case 5:
+    console.log("5");
+    case 6:
+    console.log("6")
+    case 7:
+    console.log("7");
+    case 8:
+    console.log("8");
+    case 9:
+    console.log("9")
+    case 10:
+    console.log("10");
+    case 11:
+    console.log("11");
+    case 12:
+    console.log("12");
+    case 13:
+    console.log("13");
+    case 14:
+    console.log("14");
+    case 15:
+    console.log("15")
+    break;
+
+    }
+
+    </script>
+
+    5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать
+    оператор return.
+    <script>
+        function test(a, b) {
+
+
+            function mult() {
+                return a * b;
+            }
+
+            function divide() {
+                return a / b;
+            }
+
+            function sum() {
+                return a + b;
+            }
+
+            function minus() {
+                return a - b;
+            }
+
+            return [mult(), divide(), sum(), minus()]
+
+
+        }
+
+        var cc = test(10, 15);
+        console.log("Умножение: a * b = " + cc[0] + "\n" + "Деление: a / b = " + cc[1] + "\n" + "Сложение: a + b = " + cc[2] + "\n" + "Вычитание: a - b = " + cc[3]);
+
+    </script>
+
+    6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения
+    аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну
+    из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
+
+    <script>
+        function test(a, b) {
+
+
+            function mult() {
+                return a * b;
+            }
+
+            function divide() {
+                return a / b;
+            }
+
+            function sum() {
+                return a + b;
+            }
+
+            function minus() {
+                return a - b;
+            }
+
+            return [mult(), divide(), sum(), minus()]
+
+
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            // var operation = prompt('Выберите арифметическую операцию (*, /, +, -)')
+            var args = test(arg1, arg2);
+
+            switch (operation) {
+                case "*":
+                    console.log("Умножение: a * b = " + args[0]);
+                    break;
+                case "/":
+                    console.log("Деление: a / b = " + args[1]);
+                    break;
+                case "+":
+                    console.log("Сложение: a + b = " + args[2]);
+                    break;
+                case "-":
+                    console.log("Вычитание: a - b = " + args[3]);
+                    break;
+
+            }
+
+
+        }
+
+        var operation = prompt('Выберите арифметическую операцию (*, /, +, -)');
+        mathOperation(10, 15, operation)
+
+    </script>
