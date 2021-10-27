@@ -1,0 +1,10 @@
+.cell {
+    border: 1px solid black;
+    
+}
+
+.chess {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px;
+    grid-auto-rows: 200px;
+}

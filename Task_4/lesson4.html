@@ -1,0 +1,29 @@
+<script>
+    var number = prompt("Введите число от 0 до 999");
+
+    function objs(number) {
+        var objectNumber = {};
+
+        if (number >= 0 && number <= 9) {
+            objectNumber.единицы = number;
+            return objectNumber;
+        } else if (number >= 10 && number <= 99) {
+            objectNumber.единицы = number[1];
+            objectNumber.десятки = number[0];
+            return objectNumber;
+        } else if (number >= 100 && number <= 999) {
+            objectNumber.сотни = number[0];
+            objectNumber.десятки = number[1];
+            objectNumber.единицы = number[2];
+            return objectNumber;
+        } else {
+            alert("Введите число от 0 до 999")
+        }
+
+
+    }
+
+    var x = objs(number);
+    console.log(x);
+
+</script>
