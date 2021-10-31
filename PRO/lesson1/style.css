@@ -1,0 +1,47 @@
+
+.product-item {
+    width: 240px;
+    /* border: 1px solid black; */
+    
+}
+
+.products {
+    width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.buy-btn {
+    width: 240px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    padding: 10px;
+    background-color: cadetblue;
+
+}
+
+.btn-cart {
+    width: 140px;
+    height: 20px;
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.logo {
+    color: white;
+}

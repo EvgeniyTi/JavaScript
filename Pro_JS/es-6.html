@@ -1,0 +1,200 @@
+<button>OK</button>
+<script>
+    // var x = Math.pow(2,3);
+    // var x = 2 ** 3;
+
+    // var arr = [];
+    // var obj = { a: 4, b: 10 };
+    // Раньше что бы добавить в массив значения использовали метод push
+    // arr.push(obj.a);
+    // arr.push(obj.b);
+    //В ES6 добавить в массив значения из объекта можно  помощью класса объект и метода values
+    // arr = Object.values(obj);
+    //Чтобы добавить свойства a и b в массив, то используем метод keys
+    // arr = Object.keys(obj);
+    // console.log(arr);-
+    // if (a) {
+    //     let a = 2;
+    //     console.log(a);
+    // }
+    // console.log(a);
+
+    // Template literals
+
+    // let firstName = 'Иван';
+    // let lastName = 'Иванов';
+    // let year = 1990;
+
+    // function getAge(yearOfBirth) {
+    //     let date = new Date();
+    //     let currentYear = date.getFullYear();
+    //     return currentYear - yearOfBirth;
+    // }
+    // // В ES5 было
+    // // const INFO = firstName + ' ' + lastName + ', пожденный в ' + year + ' году, ему ' + getAge(year) + ' лет';
+
+    // // В ES6 стало 
+    // const INFO = `${firstName} ${lastName}, рожденный в ${year} году, ему ${getAge(year)} лет`;
+    // console.log(INFO);
+
+    // Стрелочные функции
+    // Обычная функция
+    // const sum = function(a) {
+    //     return a + 10;
+    // }
+
+    // const sum = a => a + 10; 
+    // alert(sum(5)); 
+
+    // const sum = (a, b = 1) => { 
+    //     a = +a; 
+    //     if (!isNaN(a)) { 
+    //         console.log(a + b); 
+    //     } else { 
+    //         console.log('Вы ввели не число'); 
+    //     } 
+    // } 
+
+    // sum(7, 2); 
+
+
+    // Параметры у методов 
+    // let arr = ['PHP', 'JS', 'Java', 'C#'];
+    // arr.forEach(item => console.log(item));
+
+    // С индексами
+    // let arr = ['PHP', 'JS', 'Java', 'C#'];
+    // arr.forEach((item, i) => console.log(`${i} : ${item}`));
+
+    // Наш массив тарнсформируем в другой массив. Т.к. в новом массиве будут находиться длины элементов первого массива
+    // let arr = ['PHP', 'JS', 'Java', 'C#'];
+    // let newArr = arr.map(item => item.length);
+    // console.log(newArr);
+
+    // // Метод .filter(func)
+    // let arr = ['PHP', 'JS', 'Java', 'C#'];
+    // let newArr = arr.filter(item => item.length == 2);
+    // console.log(newArr);
+
+    // Метод .find(func)
+    // let arr = ['PHP', 'JS', 'Java', 'C#'];
+    // let newArr = arr.find(item => item.length == 2);
+    // console.log(newArr);
+
+    // Отличие стрелочной функции от обычной
+
+    // let box = {
+    //     color: 'green',
+    //     position: 10,
+    //     clickMe: function () {
+    //         document.querySelector('button').addEventListener('click', function () {
+    //             console.log(this);
+    //             console.log(`Контейнер ${this.position}, цвет: ${this.color}`);
+    //         })
+    //     }
+    // }
+
+    // box.clickMe();
+
+    // let box = {
+    //     color: 'green',
+    //     position: 10,
+    //     clickMe: function () {
+    //         document.querySelector('button').addEventListener('click', () => {
+    //             console.log(this);
+    //             console.log(`Контейнер ${this.position}, цвет: ${this.color}`);
+    //         })
+    //     }
+    // }
+
+    // box.clickMe();
+
+    // Все появилось, так как стрелочные функции не имеют собственного контекста(this).Они используют контекст родителя.
+
+    //     Т.е.сейчас this это не наша кнопка, а родительский объект box
+
+    // А как тогда обратиться к кнопке. Например мы хотим менять цвет кнопки по клику?
+
+    // Для этого используем событие event
+
+    // let box = {
+    //     color: 'green',
+    //     position: 10,
+    //     clickMe: function () {
+    //         document.querySelector('button').addEventListener('click', e => {
+    //             e.target.style.color = 'red';
+    //             console.log(this);
+    //             console.log(`Контейнер ${this.position}, цвет: ${this.color}`);
+    //         })
+    //     }
+    // }
+
+    // box.clickMe();
+    //_____________________________________________________________________________________________________
+
+    // Деструктуризация
+
+    // Как было раньше
+
+    // let mas = ['Иван', 20];
+    // let name = mas[0];
+    // let age = mas[1];
+
+
+    // Как в ES6
+
+    // let mas = ['Иван', 20];
+    // let [name, age] = mas;
+    // alert(age);
+
+    // Как парсить объекты
+
+    // let testObj = {
+    //     firstName: 'Иван',
+    //     lastName: 'Иванов',
+    //     profession: ['Программист', 'Системный администратор']
+    // }
+
+    // let { firstName: name, lastName, profession: [p1, p2] } = testObj;
+    // console.log(`${name} ${lastName} имеет профессию ${p1}, ${p2}`)
+
+
+    // Где можно использовать
+
+    // let info = year => {
+    //     let age = new Date().getFullYear() - year;
+    //     return [age, 65 - age];
+    // }
+
+    // let [age, leftWork] = info(1985);
+    // console.log(`Возраст ${age}, до пенсии ${leftWork}`);
+
+
+
+    //   Оператор REST и SPREAD
+    // REST - упаковка элементов в массив
+    // SPREAD  - распаковка массива по отдельным элементам
+
+    // function testRest(a, b, ...c) {
+    //     console.log(c)
+
+    // }
+    // testRest(1, 2, 3, 4, 5, 6)
+    // Здесь мы в функцию посылаем большее количество аргументов чем она установлено. Чтобы все сработало добавляем rest в виде ... которое все будет записывать в массив C
+
+    // Теперь Spread
+
+    // нам нужно найти максимальное значение
+
+    // const VALUES = [23, 76, 45, 457, 345, 3512, 537]
+    // console.log(Math.max(...VALUES));
+
+    // ... - это распаковка. ДАлее указывается любое название переменной
+
+
+    // let arr = ['one', 'two'];
+    // let arr2 = ['first', ...arr, 'second'];
+    // console.log(arr2);
+
+
+</script>
